@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Vinicius Flores <viniciusflores379@gmail.com>",
+  "repository": "https://github.com/viniciusflores/wdio-automated-tests.git",
   "license": "MIT",
   "scripts": {
     "test": "wdio wdio.conf.js"
