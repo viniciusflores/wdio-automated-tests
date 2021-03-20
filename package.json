@@ -27,5 +27,10 @@
     "eslint-plugin-wdio": "^7.0.0",
     "prettier": "^2.2.1",
     "wdio-chromedriver-service": "^7.0.0"
+  },
+  "dependencies": {
+    "@wdio/allure-reporter": "^7.2.1",
+    "allure-commandline": "^2.13.8",
+    "wdio-video-reporter": "^3.1.1"
   }
 }
