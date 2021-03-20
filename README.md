@@ -44,10 +44,10 @@ git clone <https://github.com/viniciusflores/wdio-automated-tests.git>
 Install dependencies
 
 ```js
-yarn
+yarn;
 ```
 
-Run  web tests locally
+Run web tests locally
 
 ```js
 yarn test
