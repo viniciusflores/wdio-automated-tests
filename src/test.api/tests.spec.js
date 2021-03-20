@@ -42,13 +42,13 @@ describe('Testing the Rick and Morty API', () => {
           name: 'rick',
           status: 'alive',
         },
-        responseType: "json",
+        responseType: 'json',
       });
       assert.isNotNull(body);
       expect(body.info.count).to.be.above(3);
       expect(body.results).to.have.lengthOf.at.above(3);
-    } catch (err)                 {
-      assert.fail(       )
+    } catch (err) {
+      assert.fail();
     }
-  }                        );
-}) 
+  });
+});

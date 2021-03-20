@@ -13,7 +13,8 @@
     "clean": "rm -rf allure-report allure-results video-result screenshots/actual screenshots/diff",
     "report:generate": "allure generate --clean",
     "report:open": "allure open",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "runLint": "lint-staged"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
@@ -48,12 +49,6 @@
     "got": "^11.8.2",
     "mocha": "^8.3.2",
     "wdio-video-reporter": "^3.1.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.js": [
