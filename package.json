@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Vinicius Flores <viniciusflores379@gmail.com>",
   "repository": "https://github.com/viniciusflores/wdio-automated-tests.git",
-  "license": "MIT",
+  "license": "Apache License",
   "scripts": {
     "test": "wdio config/wdio.local.conf.js",
     "clean": "rm -rf allure-report allure-results video-result",
