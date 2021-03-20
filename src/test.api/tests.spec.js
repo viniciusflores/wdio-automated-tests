@@ -40,7 +40,7 @@ describe('Testing the Rick and Morty API', () => {
       const { body } = await got('https://rickandmortyapi.com/api/character/', {
         searchParams: {
           name: 'rick',
-          status: 'alive',
+          status: "alive",
         },
         responseType: "json",
       });
