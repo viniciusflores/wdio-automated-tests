@@ -6,7 +6,10 @@
   "repository": "https://github.com/viniciusflores/wdio-automated-tests.git",
   "license": "MIT",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio config/wdio.local.conf.js",
+    "clean": "rm -rf allure-report allure-results video-result",
+    "report:generate": "allure generate --clean",
+    "report:open": "allure open"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
