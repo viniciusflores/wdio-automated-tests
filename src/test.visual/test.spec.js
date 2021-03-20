@@ -4,8 +4,8 @@ describe('Example login page', () => {
   beforeEach(() => {
     LoginPage.open();
     browser.waitUntil(
-      function () {
-        const state = browser.execute(function () {
+      () => {
+        const state = browser.execute(() => {
           return document.readyState;
         });
         // console.log(`state:${state}`);
