@@ -27,7 +27,7 @@ describe('Testing the Rick and Morty API', () => {
           responseType: 'json',
         },
       );
-      assert.isNotNull(body )
+      assert.isNotNull(body);
       assert.equal(body.name, 'Morty Smith');
       assert.equal(body.species, 'Human');
     } catch (err) {
@@ -40,15 +40,15 @@ describe('Testing the Rick and Morty API', () => {
       const { body } = await got('https://rickandmortyapi.com/api/character/', {
         searchParams: {
           name: 'rick',
-          status: "alive",
+          status: 'alive',
         },
-        responseType: "json",
+        responseType: 'json',
       });
       assert.isNotNull(body);
       expect(body.info.count).to.be.above(3);
       expect(body.results).to.have.lengthOf.at.above(3);
-    } catch (err)                 {
-      assert.fail(       )
-    } 
-  }                        ); 
-}) 
+    } catch (err) {
+      assert.fail();
+    }
+  });
+});
