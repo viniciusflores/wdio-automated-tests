@@ -19,7 +19,7 @@ exports.config = {
         'bstack:options': {
           projectName: process.env.PROJECT_NAME
             ? process.env.PROJECT_NAME
-            : 'automated-tests-wdio',
+            : 'wdio-automated-tests',
           buildName: process.env.BUILD_NAME
             ? process.env.BUILD_NAME
             : 'local-runner',
