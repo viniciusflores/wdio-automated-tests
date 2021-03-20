@@ -1,5 +1,5 @@
 {
-  "name": "wdio-automated-tests",
+  "name" : "wdio-automated-tests",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Vinicius Flores <viniciusflores379@gmail.com>",
@@ -51,7 +51,7 @@
     "wdio-video-reporter": "^3.1.1"
   },
   "lint-staged": {
-    "*js": [
+    "*.{js}": [
       "eslint --fix",
       "prettier --write"
     ]
