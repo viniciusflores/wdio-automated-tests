@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Vinicius Flores <viniciusflores379@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
