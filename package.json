@@ -5,6 +5,9 @@
   "author": "Vinicius Flores <viniciusflores379@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "@babel/register": "^7.13.8",
     "@wdio/cli": "^7.2.1",
     "@wdio/local-runner": "^7.2.1",
