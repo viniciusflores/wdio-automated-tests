@@ -31,6 +31,7 @@
   "dependencies": {
     "@wdio/allure-reporter": "^7.2.1",
     "allure-commandline": "^2.13.8",
+    "dotenv": "^8.2.0",
     "wdio-video-reporter": "^3.1.1"
   }
 }
