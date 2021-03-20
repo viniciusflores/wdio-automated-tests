@@ -1,8 +1,8 @@
 {
   "[javascript]": {
     "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll": true
+      "source.fixAll.eslint": true,
+      "source.fixAll": true
     }
   },
   "editor.codeActionsOnSave": {
@@ -15,8 +15,5 @@
     "strings": true,
     "other": true
   },
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120]
 }
