@@ -51,5 +51,4 @@ describe('Testing the Rick and Morty API', () => {
       assert.fail(       )
     }
   }                        );
-})
-
+}) 
