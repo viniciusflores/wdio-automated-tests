@@ -3,6 +3,10 @@ allure-report
 allure-results
 video-result
 
+# Visual regression
+screenshots/actual
+screenshots/diff
+
 ## GITIGNORE GITHUB TEMPLATE
 
 # Logs

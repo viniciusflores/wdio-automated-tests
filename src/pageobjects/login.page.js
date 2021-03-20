@@ -19,6 +19,10 @@ class LoginPage extends Page {
     return $('button[type="submit"]');
   }
 
+  get logoGithub() {
+    return $('img');
+  }
+
   /**
    * a method to encapsule automation code to interact with the page
    * e.g. to login using username and password

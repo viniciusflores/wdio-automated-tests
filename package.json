@@ -8,8 +8,9 @@
   "scripts": {
     "test": "wdio config/wdio.local.conf.js",
     "test.bs": "wdio config/wdio.browserstack.conf.js",
+    "test.visual": "wdio config/wdio.visual.conf.js",
     "test.api": "multi='spec=- mocha-allure-reporter=-' mocha src/test.api/**/*.js && npm run report:generate",
-    "clean": "rm -rf allure-report allure-results video-result",
+    "clean": "rm -rf allure-report allure-results video-result screenshots/actual screenshots/diff",
     "report:generate": "allure generate --clean",
     "report:open": "allure open"
   },
@@ -33,7 +34,8 @@
     "mocha-allure-reporter": "^1.4.0",
     "mocha-multi": "^1.1.3",
     "prettier": "^2.2.1",
-    "wdio-chromedriver-service": "^7.0.0"
+    "wdio-chromedriver-service": "^7.0.0",
+    "wdio-image-comparison-service": "^2.2.0"
   },
   "dependencies": {
     "@wdio/allure-reporter": "^7.2.1",
