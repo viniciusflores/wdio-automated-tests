@@ -1,0 +1,7 @@
+{
+  "name": "wdio-automated-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vinicius Flores <viniciusflores379@gmail.com>",
+  "license": "MIT"
+}
