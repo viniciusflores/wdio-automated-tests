@@ -13,8 +13,7 @@
     "clean": "rm -rf allure-report allure-results video-result screenshots/actual screenshots/diff",
     "report:generate": "allure generate --clean",
     "report:open": "allure open",
-    "prepare": "husky install",
-    "runLint": "lint-staged"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
