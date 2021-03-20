@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+      "name": "Debug local",
+      "type": "node",
+      "request": "launch",
+      "args": ["config/wdio.local.conf.js"],
+      "cwd": "${workspaceFolder}",
+      "autoAttachChildProcesses": true,
+      "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug browserstack",
+      "type": "node",
+      "request": "launch",
+      "args": ["config/wdio.browserstack.conf.js"],
+      "cwd": "${workspaceFolder}",
+      "autoAttachChildProcesses": true,
+      "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
+      "console": "integratedTerminal"
+    }
+  ]
+}
