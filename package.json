@@ -18,6 +18,9 @@
     "@wdio/mocha-framework": "^7.2.1",
     "@wdio/sync": "^7.2.1",
     "chromedriver": "^89.0.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "wdio-chromedriver-service": "^7.0.0"
   }
 }
