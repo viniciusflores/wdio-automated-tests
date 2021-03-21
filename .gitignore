@@ -1,6 +1,7 @@
 # Reports
 allure-report
 allure-results
+junit-report
 video-result
 
 # Visual regression

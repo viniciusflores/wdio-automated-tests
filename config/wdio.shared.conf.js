@@ -23,6 +23,16 @@ exports.config = {
   },
 
   reporters: [
+    'dot',
+    [
+      'spec',
+      {
+        symbols: {
+          passed: '[PASS]',
+          failed: '[FAIL]',
+        },
+      },
+    ],
     [
       video,
       {
@@ -37,6 +47,15 @@ exports.config = {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
+      },
+    ],
+    [
+      'junit',
+      {
+        outputDir: 'junit-report',
+        outputFileFormat(options) {
+          return `results.xml`;
+        },
       },
     ],
   ],
