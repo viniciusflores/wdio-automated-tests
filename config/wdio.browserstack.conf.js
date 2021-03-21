@@ -1,5 +1,4 @@
 const allureReporter = require('@wdio/allure-reporter').default;
-const allure = require('allure-commandline');
 const { config } = require('./wdio.shared.conf.js');
 
 exports.config = {
@@ -46,25 +45,9 @@ exports.config = {
       },
     ],
 
-    reporters: [
-      [
-        'allure',
-        {
-          outputDir: 'allure-results',
-          disableWebdriverStepsReporting: true,
-          disableWebdriverScreenshotsReporting: false,
-        },
-      ],
-    ],
-
     //
     // HOOKS
     //
-    afterHook(test, context, { error, result, duration, passed, retries }) {
-      if (error) {
-        browser.takeScreenshot();
-      }
-    },
     afterTest(test, context, { error, result, duration, passed, retries }) {
       allureReporter.addDescription(
         `Browserstack ID: ${browser.sessionId}`,
@@ -86,21 +69,6 @@ exports.config = {
         );
         browser.takeScreenshot();
       }
-    },
-    onComplete(exitCode, config, capabilities, results) {
-      const reportError = new Error('Could not generate Allure report');
-      const generation = allure(['generate', 'allure-results', '--clean']);
-      return new Promise((resolve, reject) => {
-        const generationTimeout = setTimeout(() => reject(reportError), 10000);
-        generation.on('exit', function (exitCode) {
-          clearTimeout(generationTimeout);
-          if (exitCode !== 0) {
-            return reject(reportError);
-          }
-          console.log('Allure report successfully generated');
-          resolve();
-        });
-      });
     },
   },
 };
