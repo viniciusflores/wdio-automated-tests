@@ -3,7 +3,10 @@
 This is a project to test web interfaces and api requests
 
 [![Tested with webdriver.io](https://img.shields.io/badge/tested%20with-webdriver.io-%23ea5906)](https://webdriver.io/)
-[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=WEJ2a1JYU1NBOUJBSWRlNGtWNDhXenpqVng0Z1Fmam4rcUYrSUdrQSt1RT0tLTl1bG85ZkFzWXVqeER4b2ZnK0IvZmc9PQ==--15b5fd73e3e9445d6b0a7815b8fc3ef45ecb4243)](https://automate.browserstack.com/public-build/WEJ2a1JYU1NBOUJBSWRlNGtWNDhXenpqVng0Z1Fmam4rcUYrSUdrQSt1RT0tLTl1bG85ZkFzWXVqeER4b2ZnK0IvZmc9PQ==--15b5fd73e3e9445d6b0a7815b8fc3ef45ecb4243)
+[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=BROWSERSTACK_BADGE_KEY)](https://automate.browserstack.com/public-build/BROWSERSTACK_BADGE_KEY)
+[![Build Status](https://app.saucelabs.com/buildstatus/SAUCE_USERNAME)](https://app.saucelabs.com/u/SAUCE_USERNAME)
+
+[![Browser Matrix](https://app.saucelabs.com/browser-matrix/SAUCE_USERNAME.svg)](https://app.saucelabs.com/u/SAUCE_USERNAME)
 
 ### Requirements
 
@@ -22,6 +25,8 @@ This is a project to test web interfaces and api requests
 [Chai](https://www.chaijs.com/) assertion library;
 
 [Browserstack](https://www.browserstack.com/) powerful cloud to run web tests;
+
+[Saucelabs](https://saucelabs.com/) powerful cloud to run web tests;
 
 [Page Objects Pattern](https://martinfowler.com/bliki/PageObject.html)
 
@@ -57,6 +62,12 @@ Run web tests at Browserstack
 
 ```js
 yarn test.bs
+```
+
+Run web tests at Saucelabs
+
+```js
+yarn test.sauce
 ```
 
 Run api tests
