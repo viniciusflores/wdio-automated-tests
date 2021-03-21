@@ -23,6 +23,6 @@
     "class-methods-use-this": "off",
     "mocha/no-mocha-arrows": "off",
     "import/prefer-default-export": "off",
-    "no-unused-vars": ["error", { "vars": "all", "args": "none"}]
+    "no-unused-vars": ["error", { "vars": "all", "args": "none" }]
   }
 }
