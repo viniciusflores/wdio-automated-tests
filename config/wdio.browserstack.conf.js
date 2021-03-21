@@ -1,5 +1,4 @@
 const allureReporter = require('@wdio/allure-reporter').default;
-const allure = require('allure-commandline');
 const { config } = require('./wdio.shared.conf.js');
 
 exports.config = {
@@ -8,6 +7,14 @@ exports.config = {
     host: process.env.BROWSERSTACK_HUB,
     user: process.env.BROWSERSTACK_USER,
     key: process.env.BROWSERSTACK_ACCESSKEY,
+    services: [
+      [
+        'browserstack',
+        {
+          browserstackLocal: false,
+        },
+      ],
+    ],
     maxInstances: 1,
     updateJob: false,
     capabilities: [
@@ -45,7 +52,6 @@ exports.config = {
         },
       },
     ],
-
     reporters: [
       [
         'allure',
@@ -56,7 +62,6 @@ exports.config = {
         },
       ],
     ],
-
     //
     // HOOKS
     //
@@ -67,7 +72,7 @@ exports.config = {
     },
     afterTest(test, context, { error, result, duration, passed, retries }) {
       allureReporter.addDescription(
-        `Browserstack ID: ${browser.sessionId}`,
+        `Browserstack session ID: ${browser.sessionId}`,
         'text',
       );
       browser.executeScript(
@@ -86,21 +91,6 @@ exports.config = {
         );
         browser.takeScreenshot();
       }
-    },
-    onComplete(exitCode, config, capabilities, results) {
-      const reportError = new Error('Could not generate Allure report');
-      const generation = allure(['generate', 'allure-results', '--clean']);
-      return new Promise((resolve, reject) => {
-        const generationTimeout = setTimeout(() => reject(reportError), 10000);
-        generation.on('exit', function (exitCode) {
-          clearTimeout(generationTimeout);
-          if (exitCode !== 0) {
-            return reject(reportError);
-          }
-          console.log('Allure report successfully generated');
-          resolve();
-        });
-      });
     },
   },
 };
