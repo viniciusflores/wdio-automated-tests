@@ -60,8 +60,7 @@ exports.config = {
         if (exitCode !== 0) {
           return reject(reportError);
         }
-        // console.log('Allure report successfully generated');
-        return resolve();
+        resolve();
       });
     });
   },
