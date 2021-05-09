@@ -1,6 +1,6 @@
 import LoginPage from '../pageobjects/login.page';
 
-describe('Example login page', () => {
+describe('Example visual test for login page', () => {
   beforeEach(() => {
     LoginPage.open();
     browser.waitUntil(

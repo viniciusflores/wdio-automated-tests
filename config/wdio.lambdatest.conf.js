@@ -5,39 +5,45 @@ const { config } = require('./wdio.shared.conf');
 exports.config = {
   ...config,
   ...{
-    user: process.env.SAUCELABS_USER,
-    key: process.env.SAUCELABS_ACCESSKEY,
-    region: 'us',
+    user: process.env.LAMBDATEST_USER,
+    key: process.env.LAMBDATEST_ACCESSKEY,
+    hostname: process.env.LAMBDATEST_HOST,
+    path: process.env.LAMBDATEST_PATH,
+    port: Number(process.env.LAMBDATEST_PORT),
+    services: ['lambdatest'],
     maxInstances: 1,
-    services: [
-      [
-        'sauce',
-        {
-          sauceConnect: true,
-        },
-      ],
-    ],
     capabilities: [
       {
         'browserName': process.env.BROWSER ? process.env.BROWSER : 'Chrome',
-        'browserVersion': process.env.BROWSER_VERSION
+        'version': process.env.BROWSER_VERSION
           ? process.env.BROWSER_VERSION
           : 'latest',
         'platformName': process.env.PLATFORM_NAME
           ? process.env.PLATFORM_NAME
           : 'Windows 10',
-        'sauce:options': {
-          screenResolution: process.env.RESOLUTION
-            ? process.env.RESOLUTION
-            : '1400x1050',
-          build: process.env.BUILD_NAME
-            ? process.env.BUILD_NAME
-            : 'local-runner',
-          recordVideo: true,
-          recordScreenshots: true,
-          extendedDebugging: true,
-          capturePerformance: true,
-        },
+        'buildName': process.env.BUILD_NAME
+          ? process.env.BUILD_NAME
+          : 'local-runner',
+        'os': process.env.OPERATIONAL_SYSTEM
+          ? process.env.OPERATIONAL_SYSTEM
+          : 'Windows',
+        'osVersion': process.env.OPERATING_SYSTEM_VERSION
+          ? process.env.OPERATING_SYSTEM_VERSION
+          : '10',
+        'resolution': process.env.RESOLUTION
+          ? process.env.RESOLUTION
+          : '1366x768',
+        'network': true,
+        'visual': true,
+        'console': true,
+        'video': true,
+        'selenium_version': '3.9.0',
+        'timezone': 'UTC-04:00',
+        'geoLocation': 'US',
+        'chrome.driver': '88.0',
+        'headless': false,
+        'performance': true,
+        'networkThrottling': 'Regular 4G',
       },
     ],
     reporters: [
@@ -55,15 +61,15 @@ exports.config = {
     //
     afterTest(test, context, { error, result, duration, passed, retries }) {
       allureReporter.addDescription(
-        `Saucelabs Session ID: ${browser.sessionId}`,
+        `Lambdatest Session ID: ${browser.sessionId}`,
         'text',
       );
-      browser.executeScript(`sauce:job-name=${test.title}`);
+      browser.executeScript(`lambda-name=${test.title}`);
       if (passed) {
-        browser.executeScript('sauce:job-result=passed');
+        browser.executeScript('lambda-status=passed');
       }
       if (error) {
-        browser.executeScript('sauce:job-result=failed');
+        browser.executeScript('lambda-status=failed');
         browser.takeScreenshot();
       }
     },
