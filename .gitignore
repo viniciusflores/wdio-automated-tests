@@ -1,3 +1,12 @@
+# Reporters
+allure-report
+allure-results
+video-result
+
+# Visual regression
+screenshots/actual
+screenshots/diff
+
 # Logs
 logs
 *.log
