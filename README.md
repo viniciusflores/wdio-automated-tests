@@ -9,7 +9,7 @@ Boilerplate project to run Web tests with WebdriverIO v7 for:
 
 [Git](https://git-scm.com/)
 
-[Node](https://nodejs.org/en/)
+[Node](https://nodejs.org/en/) v14
 
 [Yarn](https://yarnpkg.com/)
 
@@ -46,7 +46,7 @@ git clone <https://github.com/viniciusflores/wdio-automated-tests.git>
 Install dependencies
 
 ```js
-yarn;
+yarn
 ```
 
 Run all web tests locally
