@@ -3,7 +3,7 @@
 Boilerplate project to run Web tests with WebdriverIO v7 for:
 
 [![Tested with webdriver.io](https://img.shields.io/badge/tested%20with-webdriver.io-%23ea5906)](https://webdriver.io/)
-[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=TmVjbk9ZVWRHeEEyVU5nWmFWY0hlUXM5VVZBOSt6WjdicnlMYzJaV1dkMD0tLXNBRi8zMGpLZGN2UWN6czliSVlpRnc9PQ==--c535b5755a36534db80e455cc7cd8a261e9d4a75)](https://automate.browserstack.com/public-build/TmVjbk9ZVWRHeEEyVU5nWmFWY0hlUXM5VVZBOSt6WjdicnlMYzJaV1dkMD0tLXNBRi8zMGpLZGN2UWN6czliSVlpRnc9PQ==--c535b5755a36534db80e455cc7cd8a261e9d4a75)
+[![BrowserStack Status](https://automate.browserstack.com/badge.svg?badge_key=<YOUR-BADGE-KEY>)](https://automate.browserstack.com/public-build/<YOUR-BADGE-KEY>)
 
 ### Requirements
 
