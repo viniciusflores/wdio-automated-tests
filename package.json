@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "NODE_ENV=test wdio config/wdio.chromedriver.conf.js",
+    "test.prod": "NODE_ENV=prod wdio config/wdio.chromedriver.conf.js",
     "test.bs": "NODE_ENV=test wdio config/wdio.browserstack.conf.js",
     "test.bs.jenkins": "wdio config/wdio.browserstack.conf.js",
     "clean": "rm -rf allure-report allure-results video-result ./logs/BS*",
