@@ -21,6 +21,12 @@ const capabilities = {
   runner: process.env.RUNNER ? process.env.RUNNER : 'ENV-LOCAL',
 };
 
+const buildTagOptions = {
+  projectName: capabilities.projectName,
+  buildName: capabilities.buildName,
+  buildTag: capabilities.buildTag,
+};
+
 exports.config = {
   ...config,
   ...{
@@ -30,7 +36,20 @@ exports.config = {
     maxInstances: process.env.BROWSERSTACK_PARALLEL_RUNS
       ? Number(process.env.BROWSERSTACK_PARALLEL_RUNS)
       : 1,
-    services: [['browserstack']],
+    services: [
+      [
+        'browserstack',
+        {
+          browserstackLocal: false,
+          opts: {
+            verbose: false,
+            logFile: 'logs/BSLocal.out',
+          },
+          testObservability: true,
+          testObservabilityOptions: buildTagOptions,
+        },
+      ],
+    ],
     capabilities: [
       {
         'browserName': capabilities.browserName,
@@ -53,13 +72,16 @@ exports.config = {
           wsLocalSupport: true,
         },
         'goog:chromeOptions': {
-          args: [
-            'start-maximized',
-            '--incognito',
-            'disable-infobars',
-            'disable-popup-blocking',
-            'disable-notifications',
-          ],
+          args:
+            capabilities.browserName === 'CHROME'
+              ? [
+                  'start-maximized',
+                  '--incognito',
+                  'disable-infobars',
+                  'disable-popup-blocking',
+                  'disable-notifications',
+                ]
+              : [],
         },
       },
     ],

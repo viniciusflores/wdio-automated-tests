@@ -1,5 +1,4 @@
 const video = require('wdio-video-reporter');
-
 const { config } = require('./wdio.shared.conf');
 
 exports.config = {
