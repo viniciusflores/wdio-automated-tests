@@ -1,4 +1,4 @@
-# wdio-automate-tests
+# wdio-automated-tests
 
 Boilerplate project to run Web tests with WebdriverIO v7 for:
 
@@ -12,6 +12,8 @@ Boilerplate project to run Web tests with WebdriverIO v7 for:
 [Node](https://nodejs.org/en/) v14
 
 [Yarn](https://yarnpkg.com/)
+
+> If you want to see the report, you will also need [Java 8](https://www.oracle.com/java/technologies/downloads/#java8) or higher. This is a prerequisite of allure reports.
 
 > Consider use [NVM](https://github.com/nvm-sh/nvm) to configure and set you Node version.
 
@@ -27,7 +29,7 @@ Boilerplate project to run Web tests with WebdriverIO v7 for:
 
 [Page Objects Pattern](https://martinfowler.com/bliki/PageObject.html)
 
-[Jenkins](https://www.jenkins.io/)
+[Github Actions](https://docs.github.com/en/actions)
 
 [Allure Reports](http://allure.qatools.ru/)
 
