@@ -5,7 +5,9 @@ require('dotenv-flow').config({
 
 exports.config = {
   specs: ['./src/tests/web/**/*.js'],
-  suites: {},
+  suites: {
+    e2e: ['./src/tests/web/*.e2e.js'],
+  },
   exclude: [],
   logLevel: 'error',
   bail: 0,
@@ -29,7 +31,10 @@ exports.config = {
 
     afterTest(test, context, { error, result, duration, passed, retries }) {
       if (error) {
-        browser.takeScreenshot();
+        const filename = `ERR_${test.title}_${new Date()
+          .toISOString()
+          .slice(0, 10)}`;
+        browser.saveScreenshot(`screenshots/${filename}.png`);
       }
     },
   },
