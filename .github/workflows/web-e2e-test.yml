@@ -15,6 +15,12 @@ jobs:
           node-version: 18.15
           cache: "yarn"
 
+      - run: |
+          touch .env.test
+          echo BROWSERSTACK_HUB="${{secrets.BROWSERSTACK_HUB}}" >> .env.test
+          echo BROWSERSTACK_USER="${{secrets.BROWSERSTACK_USER}}" >> .env.test
+          echo BROWSERSTACK_ACCESSKEY="${{secrets.BROWSERSTACK_ACCESSKEY}}" >> .env.test
+
       - run: yarn install --frozen-lockfile
 
       - run: yarn test.bs --suite e2e
