@@ -5,7 +5,9 @@ require('dotenv-flow').config({
 
 exports.config = {
   specs: ['./src/tests/web/**/*.js'],
-  suites: {},
+  suites: {
+    e2e: ['./src/tests/web/*.e2e.js'],
+  },
   exclude: [],
   logLevel: 'error',
   bail: 0,
