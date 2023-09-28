@@ -11,6 +11,7 @@
     "test.bs": "NODE_ENV=test wdio config/wdio.browserstack.conf.js",
     "test.bs.local": "NODE_ENV=local wdio config/wdio.browserstack.conf.js",
     "test.bs.jenkins": "wdio config/wdio.browserstack.conf.js",
+    "test.api": "mocha",
     "clean": "rm -rf allure-report allure-results video-result ./logs/BS*",
     "report:generate": "allure generate --clean",
     "report:open": "allure open",
@@ -20,7 +21,10 @@
     "@wdio/allure-reporter": "^7.16.11",
     "allure-commandline": "^2.17.2",
     "dotenv-flow": "^3.2.0",
+    "got": "11.8.5",
     "faker": "^5.5.3",
+    "chai": "^4.3.9",
+    "mocha": "^10.2.0",
     "wdio-video-reporter": "^3.2.0"
   },
   "devDependencies": {
